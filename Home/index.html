@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-commerce</title>
+</head>
+<link rel="stylesheet" href="style.css" />
+<body>
+    <header>
+        <div id="header">
+            <img src="../public/logo.png" alt="logo" id="logo" onclick="allProducts()">
+            <input type="text" id="search" placeholder="search products..." >
+            <div id="cart-wish">
+                <a style="text-decoration: none; color: white;" href="../Cart/index.html" id="cart">🛒(0)</a>
+                <a style="text-decoration: none; color: white;" href="../Wishlist/index.html" id="wish">❤️(0)</a>
+            </div>
+        </div>
+    </header>
+    <nav>
+        <div >
+            <ul id="categories"></ul>
+        </div>
+        <div style="margin: 20px;">Select offset
+            <select id="offset" style="margin-left: 10px; height: 30px; text-align: center;">
+                <option value="5">5</option>
+                <option value="10">10</option>
+                <option value="15">15</option>
+                <option value="20">20</option>
+                <option value="25">25</option>
+                <option value="30">30</option>
+            </select>
+        </div>
+    </nav>
+    <main>
+        <div id="card">
+
+        </div>
+        <div id="pagination"></div>
+    </main>
+    <footer class='footer'>
+        <div class='links'>
+            <a>About us</a>
+            <a >Contact us</a>
+            <a>Privacy Policy</a>
+            <a>Terms and conditions</a>
+        </div>
+        <div class='copy'>
+            © E-shop. All rights reserved.
+        </div>
+        </footer>
+    <script src="script.js"></script>
+</body>
+</html>

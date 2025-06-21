@@ -168,21 +168,29 @@ body {
 
 .cart-btn {
     background-color: #007bff;
+    border-radius: 8px;
+    height: 40px;
     color: white;
 }
 
 .cart-btn.remove {
     background-color: #dc3545;
+    border-radius: 8px;
+    height: 40px;
     color: white;
 }
 
 .wish-btn {
     background-color: #17a2b8;
+    border-radius: 8px;
+    height: 40px;
     color: white;
 }
 
 .wish-btn.remove {
     background-color: #dc3545;
+    border-radius: 8px;
+    height: 40px;
     color: white;
 }
 

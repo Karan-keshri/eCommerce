@@ -255,19 +255,36 @@ async function singleProductDetails(id) {
   const product = await getSingleProduct(id);
   let cardDiv = document.querySelector("#card");
   cardDiv.innerHTML = "";
+
+  const isInCart = cartitem.some((item) => item.id === product.id);
+  const isInWish = wishitem.some((item) => item.id === product.id);
+
   const card = document.createElement("div");
   card.classList = "single-product";
-  card.innerHTML = `<img src=${product.thumbnail} alt="product" class="product-img">
+  card.innerHTML = `
+    <img src="${product.thumbnail}" alt="product" class="product-img">
     <p>${product.title}</p>
-    <p>Price: ${product.price}</p>
+    <p>Price: ₹${product.price}</p>
     <p>Category: ${product.category}</p>
-    <P>${product.description}</P>
+    <p>${product.description}</p>
     <p>Rating: ${product.rating}</p>
-    <p>Return policy: ${product.returnPolicy}</p>
-    <button>Add to cart</button>
-    <button>Add to wishlist</button>
-    `;
+    <p>Return policy: ${product.returnPolicy || "7 Days Return"}</p>
+    <button id="add-to-cart-btn" class="cart-btn ${isInCart ? "remove" : ""}">
+      ${isInCart ? "Remove from Cart" : "Add to Cart"}
+    </button>
+    <button id="add-to-wish-btn" class="wish-btn ${isInWish ? "remove" : ""}">
+      ${isInWish ? "Remove from Wishlist" : "Add to Wishlist"}
+    </button>
+  `;
+
   cardDiv.append(card);
+
+  const cartBtn = document.querySelector("#add-to-cart-btn");
+  const wishBtn = document.querySelector("#add-to-wish-btn");
+
+  cartBtn.addEventListener("click", () => toggleCart(product, cartBtn));
+  wishBtn.addEventListener("click", () => toggleWishlist(product, wishBtn));
 }
+
 
 fetchAndRender(currentPage, limit);            

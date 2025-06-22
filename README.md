@@ -5,6 +5,12 @@ The app includes product listing, , search, category filtering,cart/wishlist log
 
 ---
 
+## 🚀 Live Demo
+
+👉 [Click here to view the live project](https://karan-keshri.github.io/eCommerce/)
+
+---
+
 ## 🚀 Features
 
 - 🛍️ Product listing with image, title, and price
